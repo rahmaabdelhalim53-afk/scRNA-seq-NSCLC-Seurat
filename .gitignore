@@ -1,0 +1,6 @@
+*.rds
+*.h5
+.Rproj.user/
+.Rhistory
+.RData
+.DS_Store

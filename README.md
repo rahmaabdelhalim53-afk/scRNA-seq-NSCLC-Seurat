@@ -1,20 +1,31 @@
-# scRNA-seq-NSCLC-Seurat
-# Single-Cell RNA Sequencing Analysis (NSCLC)
+# Single-Cell RNA-seq Analysis of NSCLC (Seurat v5)
 
-This repository contains an end-to-end single-cell RNA sequencing (scRNA-seq) analysis pipeline for Non-Small Cell Lung Cancer (NSCLC) datasets using **R** and **Seurat v5**.
+End-to-end scRNA-seq analysis of Non-Small Cell Lung Cancer (NSCLC) using **R** and **Seurat v5**.
 
-## 📊 Workflow & Steps
-1. **Quality Control (QC):** Filtering cells based on `nFeature_RNA`, `nCount_RNA`, and mitochondrial gene percentage (`percent.mt`).
-2. **Normalization & Scaling:** Standard log-normalization and identification of highly variable features (HVGs).
-3. **Dimensionality Reduction & Clustering:** PCA, Elbow Plot analysis, and graph-based clustering using UMAP.
-4. **Cell Type Annotation:** Identifying major cell populations (Tumor cells, T/NK cells, Monocytes/Macrophages, Fibroblasts, Plasma cells, pDCs).
+## Data
+10x Genomics **20k NSCLC DTC 3' (Next GEM), donor 1** public dataset.
+Download `20k_NSCLC_DTC_3p_nextgem_donor_1_count_sample_feature_bc_matrix.h5` from the 10x Genomics datasets page and place it in the main folder before running the script.
 
-## 📁 Repository Structure
-- `scripts/`: R scripts used for preprocessing, clustering, and annotation.
-- `results/plots/`: Generated quality control, PCA, and UMAP visualization plots (PDF/PNG).
-- `sessionInfo.txt`: R session details and package versions for reproducibility.
+## Workflow
+1. **Quality control:** filtering by `nFeature_RNA`, `nCount_RNA` and `percent.mt`.
+2. **Normalization and scaling:** log-normalization and 2000 highly variable genes.
+3. **Dimensionality reduction and clustering:** PCA, elbow plot, graph-based clustering (resolution 0.3) and UMAP.
+4. **Annotation:** T/NK cells, Tumor cells, Monocytes/Macrophages, Plasma cells, Fibroblasts and pDCs.
 
-## 💻 Software & Environment
-- **Language:** R (version 4.6.1)
-- **Core Package:** Seurat (v5.5.1)
-- See `sessionInfo.txt` for the complete dependency list.
+## Result
+![UMAP annotated](results/plots/10_UMAP_annotated.png)
+
+## Repository structure
+- `scripts/`: the R analysis script.
+- `results/plots/`: QC, PCA, UMAP and marker plots.
+- `results/tables/`: marker genes and cell type counts.
+- `results/sessionInfo.txt`: R and package versions.
+
+## How to run
+From the main folder:
+```bash
+Rscript scripts/scRNA_seq_analysis.R
+```
+
+## Environment
+R 4.6.1, Seurat 5.5.1 (see `results/sessionInfo.txt` for the full list).
