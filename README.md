@@ -10,6 +10,7 @@ This repository contains an end-to-end single-cell RNA sequencing (scRNA-seq) an
 4. **Cell Type Annotation:** Identifying major cell populations (Tumor cells, T/NK cells, Monocytes/Macrophages, Fibroblasts, Plasma cells, pDCs).
 
 ## 📁 Repository Structure
+- `scripts/`: R scripts used for preprocessing, clustering, and annotation.
 - `results/plots/`: Generated quality control, PCA, and UMAP visualization plots (PDF/PNG).
 - `sessionInfo.txt`: R session details and package versions for reproducibility.
 
