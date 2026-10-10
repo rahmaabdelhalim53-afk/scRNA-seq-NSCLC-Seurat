@@ -4,7 +4,9 @@ End-to-end scRNA-seq analysis of Non-Small Cell Lung Cancer (NSCLC) using **R** 
 
 ## Data
 10x Genomics **20k NSCLC DTC 3' (Next GEM), donor 1** public dataset.
+
 Download [`20k_NSCLC_DTC_3p_nextgem_donor_1_count_sample_feature_bc_matrix.h5`](https://cf.10xgenomics.com/samples/cell-exp/6.1.2/20k_NSCLC_DTC_3p_nextgem_donor_1/20k_NSCLC_DTC_3p_nextgem_donor_1_count_sample_feature_bc_matrix.h5) from 10x Genomics and place it in the main folder before running the script.
+
 ## Workflow
 1. **Quality control:** filtering by `nFeature_RNA`, `nCount_RNA` and `percent.mt`.
 2. **Normalization and scaling:** log-normalization and 2000 highly variable genes.
